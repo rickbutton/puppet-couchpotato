@@ -1,0 +1,21 @@
+{
+  "name": "djl-couchpotato",
+  "version": "1.0.0",
+  "author": "djl",
+  "summary": "Install couchpotato",
+  "license": "Apache 2.0",
+  "source": "https://github.com/djl/puppet-couchpotato.git",
+  "project_page": "https://github.com/djl/puppet-couchpotato",
+  "issues_url": "https://github.com/djl/puppet-couchpotato/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0"
+    },
+    {
+      "name": "puppetlabs/vcsrepo",
+      "version_requirement": ">= 0.1.2"
+    }
+  ]
+}
+
