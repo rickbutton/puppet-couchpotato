@@ -8,10 +8,13 @@ class couchpotato::install() inherits couchpotato::params {
     group    => $couchpotato::user,
   }
 
-  file { '/etc/init.d/couchpotato':
-    ensure  => present,
-    content => template('couchpotato/debian.init.erb'),
-    mode    => '0755',
+  # TODO make this work on non-Debian platforms
+  if $::osfamily == 'Debian' {
+    file { '/etc/init.d/couchpotato':
+      ensure  => present,
+      content => template('couchpotato/debian.init.erb'),
+      mode    => '0755',
+    }
   }
 
   file { $couchpotato::data_dir:
