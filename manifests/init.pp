@@ -1,29 +1,32 @@
 # == Class: couchpotato
 #
-# Install couchpotato
+# Install CouchPotato
 #
 # === Parameters
 #
 # [*install_dir*]
-#   Where couchpotato should be installed
+#   Where CouchPotato should be installed
 #
 # [*data_dir*]
-#   The directory containing data created by couchpotato
+#   The directory containing data created by CouchPotato
 #
 # [*user*]
-#   The user couchpotato should run as
+#   The user CouchPotato should run as
+#
+# [*user_shell*]
+#   The CouchPotato user's shell
 #
 # [*address*]
-#   The address couchpotato should listening on
+#   The address CouchPotato should listening on
 #
 # [*port*]
-#   The port number couchpotato should be running on
+#   The port number CouchPotato should be running on
 #
 # [*pidfile*]
-#   The pidfile for the couchpotato process
+#   The pidfile for the CouchPotato process
 #
 # [*repo*]
-#   The upstream git repo from which couchpotato will be installed
+#   The upstream git repo from which CouchPotato will be installed
 #
 # === Examples
 #

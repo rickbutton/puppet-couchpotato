@@ -1,11 +1,17 @@
 # == Class: couchpotato::install
 class couchpotato::install() inherits couchpotato::params {
+  user { $couchpotato::user:
+    ensure => present,
+    shell  => $couchpotato::user_shell,
+  }
+
   vcsrepo { $couchpotato::install_dir:
     ensure   => present,
     provider => git,
     source   => $couchpotato::repo,
     owner    => $couchpotato::user,
     group    => $couchpotato::user,
+    require  => User[$couchpotato::user]
   }
 
   # TODO make this work on non-Debian platforms
@@ -22,5 +28,6 @@ class couchpotato::install() inherits couchpotato::params {
     mode   => '0755',
     owner  => $couchpotato::user,
     group  => $couchpotato::user,
+    require  => User[$couchpotato::user]
   }
 }
