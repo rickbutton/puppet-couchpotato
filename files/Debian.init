@@ -44,17 +44,17 @@ DESC=CouchPotato
 ## otherwise default couchpotato is used
 
 # Run CP as username
-RUN_AS=${CP_USER-<%= @user %>}
+RUN_AS=${CP_USER-couchpotato}
 
 # Path to app
 # CP_HOME=path_to_app_CouchPotato.py
-APP_PATH=${CP_HOME-<%= @install_dir %>}
+APP_PATH=${CP_HOME-/usr/share/couchpotato}
 
 # Data directory where couchpotato.db, cache and logs are stored
-DATA_DIR=${CP_DATA-<%= @data_dir %>}
+DATA_DIR=${CP_DATA-/var/lib/couchpotato}
 
 # Path to store PID file
-PID_FILE=${CP_PIDFILE-<%= @pid_file %>}
+PID_FILE=${CP_PIDFILE-/var/run/couchpotato/couchpotato.pid}
 
 # path to python bin
 DAEMON=${PYTHON_BIN-/usr/bin/python}

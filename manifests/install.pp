@@ -14,11 +14,10 @@ class couchpotato::install() inherits couchpotato::params {
     require  => User[$couchpotato::user]
   }
 
-  # TODO make this work on non-Debian platforms
-  if $::osfamily == 'Debian' {
+  if $::osfamily =~ /^Debian|RedHat/ {
     file { '/etc/init.d/couchpotato':
       ensure  => present,
-      content => template('couchpotato/debian.init.erb'),
+      source => "puppet:///modules/couchpotato/${::osfamily}.init",
       mode    => '0755',
     }
   }

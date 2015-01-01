@@ -26,8 +26,8 @@ the service to start at boot.
 ### What couchpotato affects
 
 * Checks out couchpotato from git
-* Creates an init script (Debian only)
-* Creates defaults under `/etc/default/couchpotato` (Debian only)
+* Creates an init script
+* Creates defaults under `/etc/default/couchpotato`
 
 
 ### Beginning with couchpotato
