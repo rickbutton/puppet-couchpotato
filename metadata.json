@@ -1,8 +1,8 @@
 {
   "name": "djl-couchpotato",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "djl",
-  "summary": "Install couchpotato",
+  "summary": "Install CouchPotato",
   "license": "Apache 2.0",
   "source": "https://github.com/djl/puppet-couchpotato.git",
   "project_page": "https://github.com/djl/puppet-couchpotato",
