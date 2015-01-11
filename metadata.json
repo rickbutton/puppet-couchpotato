@@ -1,6 +1,6 @@
 {
   "name": "djl-couchpotato",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "djl",
   "summary": "Install CouchPotato",
   "license": "Apache 2.0",
