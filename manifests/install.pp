@@ -5,28 +5,32 @@ class couchpotato::install() inherits couchpotato::params {
     shell  => $couchpotato::user_shell,
   }
 
+  package { 'git':
+    ensure => present,
+  }
+
   vcsrepo { $couchpotato::install_dir:
     ensure   => present,
     provider => git,
     source   => $couchpotato::repo,
     owner    => $couchpotato::user,
     group    => $couchpotato::user,
-    require  => User[$couchpotato::user]
+    require  => [ User[$couchpotato::user], Package['git'] ]
   }
 
   if $::osfamily =~ /^Debian|RedHat/ {
     file { '/etc/init.d/couchpotato':
-      ensure  => present,
+      ensure => present,
       source => "puppet:///modules/couchpotato/${::osfamily}.init",
-      mode    => '0755',
+      mode   => '0755',
     }
   }
 
   file { $couchpotato::data_dir:
-    ensure => directory,
-    mode   => '0755',
-    owner  => $couchpotato::user,
-    group  => $couchpotato::user,
-    require  => User[$couchpotato::user]
+    ensure  => directory,
+    mode    => '0755',
+    owner   => $couchpotato::user,
+    group   => $couchpotato::user,
+    require => User[$couchpotato::user]
   }
 }
