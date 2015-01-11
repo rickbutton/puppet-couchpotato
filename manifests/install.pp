@@ -1,12 +1,10 @@
 # == Class: couchpotato::install
 class couchpotato::install() inherits couchpotato::params {
+  ensure_packages(['git'])
+
   user { $couchpotato::user:
     ensure => present,
     shell  => $couchpotato::user_shell,
-  }
-
-  package { 'git':
-    ensure => present,
   }
 
   vcsrepo { $couchpotato::install_dir:
