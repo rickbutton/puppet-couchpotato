@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "author": "djl",
   "summary": "Install CouchPotato",
-  "license": "Apache 2.0",
+  "license": "ISC",
   "source": "https://github.com/djl/puppet-couchpotato.git",
   "project_page": "https://github.com/djl/puppet-couchpotato",
   "issues_url": "https://github.com/djl/puppet-couchpotato/issues",
