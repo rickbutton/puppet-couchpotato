@@ -16,6 +16,9 @@
 # [*user_shell*]
 #   The CouchPotato user's shell
 #
+# [*manage_user*]
+#   Whether Puppet should manage this user
+#
 # [*address*]
 #   The address CouchPotato should listening on
 #
@@ -43,11 +46,15 @@ class couchpotato (
   $install_dir = $couchpotato::params::install_dir,
   $data_dir    = $couchpotato::params::data_dir,
   $user        = $couchpotato::params::user,
+  $user_shell  = $couchpotato::params::user_shell,
+  $manage_user = $couchpotato::params::manage_user,
   $address     = $couchpotato::params::address,
   $port        = $couchpotato::params::port,
   $pidfile     = $couchpotato::params::pidfile,
   $repo        = $couchpotato::params::repo,
 ) inherits couchpotato::params {
+
+  validate_bool($manage_user)
 
   class { 'couchpotato::install': } ->
   class { 'couchpotato::config': } ~>

@@ -2,9 +2,11 @@
 class couchpotato::install() inherits couchpotato::params {
   ensure_packages(['git'])
 
-  user { $couchpotato::user:
-    ensure => present,
-    shell  => $couchpotato::user_shell,
+  if ($couchpotato::manage_user) {
+    user { $couchpotato::user:
+      ensure => present,
+      shell  => $couchpotato::user_shell,
+    }
   }
 
   vcsrepo { $couchpotato::install_dir:
