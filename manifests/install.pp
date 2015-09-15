@@ -6,6 +6,7 @@ class couchpotato::install() inherits couchpotato::params {
     user { $couchpotato::user:
       ensure => present,
       shell  => $couchpotato::user_shell,
+      home   => $couchpotato::data_dir,
     }
   }
 
