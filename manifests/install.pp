@@ -16,6 +16,7 @@ class couchpotato::install() inherits couchpotato::params {
     source   => $couchpotato::repo,
     owner    => $couchpotato::user,
     group    => $couchpotato::user,
+    force    => true,
     require  => [ User[$couchpotato::user], Package['git'] ]
   }
 
