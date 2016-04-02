@@ -4,6 +4,7 @@ class couchpotato::params {
   $data_dir    = '/var/lib/couchpotato'
   $user        = 'couchpotato'
   $user_shell  = '/bin/false'
+  $user_groups = ['couchpotato', 'media']
   $manage_user = true
   $address     = '0.0.0.0'
   $port        = '5050'
