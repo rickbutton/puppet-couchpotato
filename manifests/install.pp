@@ -3,6 +3,11 @@ class couchpotato::install() inherits couchpotato::params {
   ensure_packages(['git'])
 
   if ($couchpotato::manage_user) {
+    $couchpotato::user_groups.each |$g| {
+      group { $g:
+        ensure => present
+      }
+    }
     user { $couchpotato::user:
       ensure => present,
       shell  => $couchpotato::user_shell,
