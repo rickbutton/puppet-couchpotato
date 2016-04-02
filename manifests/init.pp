@@ -16,6 +16,9 @@
 # [*user_shell*]
 #   The CouchPotato user's shell
 #
+# [*user_groups*]
+#   The CouchPotato user's groups
+#
 # [*manage_user*]
 #   Whether Puppet should manage this user
 #
@@ -47,6 +50,7 @@ class couchpotato (
   $data_dir    = $couchpotato::params::data_dir,
   $user        = $couchpotato::params::user,
   $user_shell  = $couchpotato::params::user_shell,
+  $user_groups = $couchpotato::params::user_groups,
   $manage_user = $couchpotato::params::manage_user,
   $address     = $couchpotato::params::address,
   $port        = $couchpotato::params::port,
